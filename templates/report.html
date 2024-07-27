@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WROSS Recargas - Relatórios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-color: #fff7e6; /* Amarelo claro */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f1c40f; /* Amarelo mais forte para cabeçalho */
+            padding: 10px 0;
+            text-align: center;
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f1c40f; /* Amarelo mais forte para rodapé */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .report {
+            margin-top: 20px;
+        }
+        .item {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .item h2 {
+            color: #f39c12; /* Laranja para título */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="/">Produtos</a></li>
+                <li><a href="/vendas">Vendas</a></li>
+                <li><a href="/relatorios">Relatórios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Relatórios Mensais</h1>
+        <div class="report">
+            {% for item in report %}
+                <div class="item">
+                    <h2>{{ item['month'] }}</h2>
+                    <p>Total de Vendas: {{ item['total_sales'] }}</p>
+                    <p>Comprador: {{ item['buyer'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 WROSS Recargas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas - WROSS Recargas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('produtos') }}">Produtos</a>
+            <a href="{{ url_for('vendas') }}">Vendas</a>
+            <a href="{{ url_for('relatorios') }}">Relatórios</a>
+            <a href="{{ url_for('revendedores') }}">Revendedores</a>
+            <a href="{{ url_for('graficos') }}">Gráficos</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Vendas</h1>
+        <form method="post" action="{{ url_for('add_sale') }}">
+            <label for="product_id">Produto:</label>
+            <select name="product_id" id="product_id" required>
+                {% for product in products %}
+                <option value="{{ product.id }}">{{ product.name }}</option>
+                {% endfor %}
+            </select>
+            <label for="quantity">Quantidade:</label>
+            <input type="number" name="quantity" id="quantity" required>
+            <label for="revendedor_id">Revendedor:</label>
+            <select name="revendedor_id" id="revendedor_id" required>
+                {% for revendedor in revendedores %}
+                <option value="{{ revendedor.id }}">{{ revendedor.nome }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Adicionar Venda</button>
+        </form>
+        
+        <h2>Lista de Vendas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Logo</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Revendedor</th>
+                    <th>Data da Venda</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sale in sales %}
+                <tr>
+                    <td>{{ sale.id }}</td>
+                    <td><img src="{{ sale.logo }}" alt="{{ sale.product_name }}" width="50"></td>
+                    <td>{{ sale.product_name }}</td>
+                    <td>{{ sale.quantity }}</td>
+                    <td>{{ sale.revendedor }}</td>
+                    <td>{{ sale.sale_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 WROSS Recargas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

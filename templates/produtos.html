@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - WROSS Recargas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .form-inline input {
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('produtos') }}">Produtos</a>
+            <a href="{{ url_for('vendas') }}">Vendas</a>
+            <a href="{{ url_for('relatorios') }}">Relatórios</a>
+            <a href="{{ url_for('revendedores') }}">Revendedores</a>
+			<a href="{{ url_for('graficos') }}">Gráficos</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Produtos</h1>
+
+        <form action="{{ url_for('add_product') }}" method="POST" class="form-inline">
+            <input type="text" name="product_name" placeholder="Nome do Produto" required>
+            <input type="text" name="price" placeholder="Preço" required>
+            <input type="text" name="logo" placeholder="URL da Logo" required>
+            <button type="submit">Adicionar Produto</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Logo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td><img src="{{ product.logo }}" alt="{{ product.name }}" style="width: 50px; height: auto;"></td>
+                    <td>
+                        <form action="{{ url_for('delete_product', product_id=product.id) }}" method="POST" style="display: inline-block;">
+                            <button type="submit">Deletar</button>
+                        </form>
+                        <form action="{{ url_for('edit_product', product_id=product.id) }}" method="POST" style="display: inline-block;">
+                            <input type="text" name="product_name" value="{{ product.name }}">
+                            <input type="text" name="price" value="{{ product.price }}">
+                            <input type="text" name="logo" value="{{ product.logo }}">
+                            <button type="submit">Editar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 WROSS Recargas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

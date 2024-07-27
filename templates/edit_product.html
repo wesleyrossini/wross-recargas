@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Produto - WROSS Recargas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('produtos') }}">Produtos</a>
+            <a href="{{ url_for('vendas') }}">Vendas</a>
+            <a href="{{ url_for('relatorios') }}">Relatórios</a>
+            <a href="{{ url_for('revendedores') }}">Revendedores</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Editar Produto</h1>
+        
+        <form action="{{ url_for('edit_product', product_id=product.id) }}" method="POST">
+            <div class="form-group">
+                <label for="product_name">Nome do Produto</label>
+                <input type="text" id="product_name" name="product_name" value="{{ product.name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Preço</label>
+                <input type="text" id="price" name="price" value="{{ product.price }}" required>
+            </div>
+            <div class="form-group">
+                <label for="logo">Logo (URL)</label>
+                <input type="text" id="logo" name="logo" value="{{ product.logo }}" required>
+            </div>
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 WROSS Recargas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

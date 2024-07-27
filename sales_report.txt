@@ -1,0 +1,78 @@
+Relatório de Vendas
+
+Data de Exportação: 2024-07-25 15:01:32
+
+Revendedor: Cris
+Produto, Quantidade
+Red Play - Anual, 6
+Red Play - Mensal, 30
+TVE Anual, 21
+Blue anual , 2
+MFC Anual, 57
+MFC Mensal, 110
+UniTV Anual, 13
+UniTV Mensal, 30
+TVE Mensal, 90
+Duna anual , 8
+Duna mensal, 10
+
+Revendedor: Gih
+Produto, Quantidade
+MFC Mensal, 140
+MFC Anual, 35
+TVE Anual, 80
+TVE Mensal, 465
+UniTV Mensal, 40
+UniTV Anual, 7
+Blue TV Mensal, 30
+Blue anual , 1
+Duna mensal, 10
+Red Play - Mensal, 15
+
+
+
+Detalhes de Todas as Vendas:
+Produto, Quantidade, Revendedor, Data da Venda, Valor Total
+Red Play - Anual, 6, Cris, 2024-07-25 14:08:58, R$ 486.00
+Red Play - Mensal, 30, Cris, 2024-07-25 14:09:43, R$ 282.00
+TVE Anual, 21, Cris, 2024-07-25 14:46:23, R$ 1617.00
+Blue anual , 2, Cris, 2024-07-25 14:46:48, R$ 160.00
+MFC Anual, 57, Cris, 2024-07-25 14:47:18, R$ 3705.00
+MFC Mensal, 80, Cris, 2024-07-25 14:47:41, R$ 1112.00
+UniTV Anual, 13, Cris, 2024-07-25 14:48:05, R$ 975.00
+UniTV Mensal, 30, Cris, 2024-07-25 14:48:19, R$ 219.00
+TVE Mensal, 60, Cris, 2024-07-25 14:48:32, R$ 624.00
+Duna anual , 8, Cris, 2024-07-25 14:48:43, R$ 832.00
+Duna mensal, 10, Cris, 2024-07-25 14:48:56, R$ 112.00
+MFC Mensal, 20, Gih, 2024-07-25 14:49:08, R$ 278.00
+MFC Anual, 5, Gih, 2024-07-25 14:49:23, R$ 325.00
+TVE Anual, 15, Gih, 2024-07-25 14:49:37, R$ 1155.00
+TVE Mensal, 100, Gih, 2024-07-25 14:49:51, R$ 1040.00
+MFC Mensal, 50, Gih, 2024-07-25 14:50:04, R$ 695.00
+MFC Anual, 10, Gih, 2024-07-25 14:50:17, R$ 650.00
+TVE Anual, 20, Gih, 2024-07-25 14:50:32, R$ 1540.00
+TVE Mensal, 175, Gih, 2024-07-25 14:50:46, R$ 1820.00
+UniTV Mensal, 10, Gih, 2024-07-25 14:51:00, R$ 73.00
+UniTV Anual, 2, Gih, 2024-07-25 14:51:14, R$ 150.00
+Blue TV Mensal, 15, Gih, 2024-07-25 14:51:28, R$ 156.00
+MFC Mensal, 20, Gih, 2024-07-25 14:51:37, R$ 278.00
+MFC Anual, 5, Gih, 2024-07-25 14:51:50, R$ 325.00
+TVE Mensal, 15, Gih, 2024-07-25 14:52:00, R$ 156.00
+TVE Mensal, 75, Gih, 2024-07-25 14:52:15, R$ 780.00
+MFC Mensal, 30, Gih, 2024-07-25 14:52:32, R$ 417.00
+MFC Anual, 5, Gih, 2024-07-25 14:52:52, R$ 325.00
+TVE Anual, 20, Gih, 2024-07-25 14:53:15, R$ 1540.00
+TVE Mensal, 100, Gih, 2024-07-25 14:53:57, R$ 1040.00
+UniTV Mensal, 30, Gih, 2024-07-25 14:54:11, R$ 219.00
+UniTV Anual, 5, Gih, 2024-07-25 14:54:26, R$ 375.00
+Blue TV Mensal, 15, Gih, 2024-07-25 14:54:40, R$ 156.00
+Blue anual , 1, Gih, 2024-07-25 14:54:54, R$ 80.00
+Duna mensal, 10, Gih, 2024-07-25 14:55:10, R$ 112.00
+MFC Mensal, 20, Gih, 2024-07-25 14:55:23, R$ 278.00
+MFC Anual, 10, Gih, 2024-07-25 14:55:35, R$ 650.00
+Red Play - Mensal, 15, Gih, 2024-07-25 14:55:49, R$ 141.00
+TVE Anual, 25, Gih, 2024-07-25 14:56:09, R$ 1925.00
+MFC Mensal, 30, Cris, 2024-07-25 14:56:23, R$ 417.00
+TVE Mensal, 30, Cris, 2024-07-25 14:56:36, R$ 312.00
+
+Total Geral das Vendas: R$ 27532.00
